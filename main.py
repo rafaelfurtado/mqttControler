@@ -31,7 +31,7 @@ def on_message(client, userdata, msg):
 try:
     print("[STATUS] Inicializando MQTT...")
     # inicializa MQTT:
-    client = mqtt.Client()
+    client = mqtt.Client() # Criando client MQTT
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.on_message = on_message
@@ -39,5 +39,5 @@ try:
     client.connect(Broker, PortaBroker, KeepAliveBroker)
     client.loop_forever()
 except KeyboardInterrupt:
-    print ("\nCtrl+C pressionado, encerrando aplicacao e saindo...")
+    print("\nCtrl+C pressionado, encerrando aplicacao e saindo...")
     sys.exit(0)
